@@ -1,0 +1,27 @@
+class Solution {
+public:
+    char findTheDifference(string s, string t) {
+        vector<char> vecs = convert(s);
+        
+        vector<char> vect = convert(t);
+        
+        for(int i = 0; i < s.length();i++){
+            if(vecs[i]!=vect[i]){
+                return vect[i];
+            }
+        }
+        return vect[t.length()-1];
+
+    }
+    vector<char> convert(string str){
+        vector<char> vecs;
+        for(int i = 0; i < str.length();i++){
+            vecs.push_back(str[i]);
+        }
+        sort(vecs.begin(),vecs.end());
+        return vecs;
+    }
+
+};
+
+  
